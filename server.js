@@ -16,6 +16,7 @@ mongoose
   .then((res) => console.log(successMsg('Connected to DB')))
   .catch((err) => console.log(errorMsg(`DB connection error: ${err}`)));
 
+// роуты перенес перед listen чтобы работал деплой на cyclic
 app.use(movieRoutes);
 app.use(songRoutes);
 

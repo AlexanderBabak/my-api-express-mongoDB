@@ -8,6 +8,7 @@ const getSongs = (req, res) => {
   Song.find()
     .sort({ rank: 1 })
     .then((songs) => {
+      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000'); // для работы api с cyclic и запросов с react
       res.status(200).json(songs);
     })
     .catch((err) => handleError(res, err));
