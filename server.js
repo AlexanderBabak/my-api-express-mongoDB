@@ -1,0 +1,22 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const movieRoutes = require('./routes/movie-routes');
+require('dotenv').config()
+const chalk = require('chalk')
+
+const errorMsg = chalk.bgKeyword('white').redBright;
+const successMsg = chalk.bgKeyword('green').black;
+
+const app = express();
+app.use(express.json());
+
+mongoose
+  .connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then((res) => console.log(successMsg('Connected to DB')))
+  .catch((err) => console.log(errorMsg(`DB connection error: ${err}`)));
+
+app.listen(process.env.PORT, (err) => {
+  err ? console.log(err) : console.log(`listening port ${process.env.PORT}`);
+});
+
+app.use(movieRoutes);
