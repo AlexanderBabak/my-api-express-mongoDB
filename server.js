@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const movieRoutes = require('./routes/movie-routes');
+const songRoutes = require('./routes/song-routes');
 require('dotenv').config();
 const chalk = require('chalk');
 
@@ -20,3 +21,4 @@ app.listen(process.env.PORT, (err) => {
 });
 
 app.use(movieRoutes);
+app.use(songRoutes);
