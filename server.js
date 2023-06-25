@@ -16,9 +16,9 @@ mongoose
   .then((res) => console.log(successMsg('Connected to DB')))
   .catch((err) => console.log(errorMsg(`DB connection error: ${err}`)));
 
+app.use(movieRoutes);
+app.use(songRoutes);
+
 app.listen(process.env.PORT, (err) => {
   err ? console.log(err) : console.log(`listening port ${process.env.PORT}`);
 });
-
-app.use(movieRoutes);
-app.use(songRoutes);
