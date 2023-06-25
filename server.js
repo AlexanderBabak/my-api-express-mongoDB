@@ -1,8 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const movieRoutes = require('./routes/movie-routes');
-require('dotenv').config()
-const chalk = require('chalk')
+require('dotenv').config();
+const chalk = require('chalk');
 
 const errorMsg = chalk.bgKeyword('white').redBright;
 const successMsg = chalk.bgKeyword('green').black;
