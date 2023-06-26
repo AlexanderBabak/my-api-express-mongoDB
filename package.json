@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YauhenKavalchuk/mongodb.git"
+    "url": "git+https://github.com/bbkshow/my-api-express-mongoDB.git"
   },
   "author": "'Alexander Babak'",
   "license": "ISC",
