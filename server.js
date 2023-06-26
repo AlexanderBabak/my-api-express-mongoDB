@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const movieRoutes = require('./routes/movie-routes');
 const songRoutes = require('./routes/song-routes');
+const cors = require('cors');
 require('dotenv').config();
 const chalk = require('chalk');
 
@@ -9,6 +10,7 @@ const errorMsg = chalk.bgKeyword('white').redBright;
 const successMsg = chalk.bgKeyword('green').black;
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 mongoose
